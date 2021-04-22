@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1026977776609",
+    "project_id": "jung-gar",
+    "storage_bucket": "jung-gar.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1026977776609:android:5a76a81b8e317b10b548a0",
+        "android_client_info": {
+          "package_name": "com.gyeongsang.junggar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1026977776609-sgp9s5h162fmd85u24fourkie6d2f9dt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3EU34TV5nDcHaeHDy72oYPSv_jknn89w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1026977776609-sgp9s5h162fmd85u24fourkie6d2f9dt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

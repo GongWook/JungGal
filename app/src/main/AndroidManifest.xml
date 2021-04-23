@@ -9,12 +9,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.JungGar">
-        <activity android:name=".MainActivity">
+
+        <!-- 스플래쉬 액티비티 -->
+        <activity android:name=".SplashActivity"
+            android:theme ="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+       <!-- 메인 엑티비티 -->
+
+        <activity android:name=".MainActivity">
+
         </activity>
     </application>
 

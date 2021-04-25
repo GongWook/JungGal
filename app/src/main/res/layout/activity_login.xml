@@ -80,12 +80,14 @@
                 android:text="ID / PW 저장"/>
 
             <TextView
+                android:id="@+id/register_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="50dp"
                 android:text="회원가입"
+                android:clickable="true"
                 android:textColor="#000000"
-                android:textSize="16sp"/>
+                android:textSize="16sp" />
 
 
         </LinearLayout>

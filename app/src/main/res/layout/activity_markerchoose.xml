@@ -34,7 +34,6 @@
     </LinearLayout>
 
     <RadioGroup
-        android:id="@+id/radiogroup1"
         android:layout_width="284dp"
         android:layout_height="607dp"
         android:layout_marginTop="20dp">
@@ -154,12 +153,6 @@
         android:backgroundTint="#FFC000"
         android:text="완료"
         android:textColor="#FFFFFF" />" />
-
-    <TextView
-        android:id="@+id/text_result"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="" />  //결과 확인 차 임의로 추가했습니다
 
 
 </LinearLayout>

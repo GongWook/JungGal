@@ -33,126 +33,136 @@
 
     </LinearLayout>
 
-    <RadioGroup
-        android:layout_width="284dp"
-        android:layout_height="607dp"
-        android:layout_marginTop="20dp">
-
-        <RadioButton
-            android:id="@+id/radiobtn_chicken"
-            android:layout_width="match_parent"
-            android:layout_height="83dp"
-            android:drawableLeft="@drawable/hen_custom"
-            android:drawablePadding="50dip"
-            android:paddingLeft="50dip"
-            android:text="치킨"
-            android:textSize="24sp" />
-
-        <View
-            android:id="@+id/r_line"
-            android:layout_width="match_parent"
-            android:layout_height="0.7dp"
-            android:background="#808080" />
-
-        <RadioButton
-            android:id="@+id/radiobtn_westfood"
-            android:layout_width="match_parent"
-            android:layout_height="83dp"
-            android:drawableLeft="@drawable/westfood_custom"
-            android:drawablePadding="50dip"
-            android:paddingLeft="50dip"
-            android:text="양식"
-            android:textSize="24sp" />
-
-        <View
-            android:id="@+id/r_line2"
-            android:layout_width="match_parent"
-            android:layout_height="0.7dp"
-            android:background="#808080" />
-
-        <RadioButton
-            android:id="@+id/radiobtn_korfood"
-            android:layout_width="match_parent"
-            android:layout_height="83dp"
-            android:drawableLeft="@drawable/koreanfood_custom"
-            android:drawablePadding="50dip"
-            android:paddingLeft="50dip"
-            android:text="한식"
-            android:textSize="24sp" />
-
-        <View
-            android:id="@+id/r_line3"
-            android:layout_width="match_parent"
-            android:layout_height="0.7dp"
-            android:background="#808080" />
-
-        <RadioButton
-            android:id="@+id/radiobtn_japanfood"
-            android:layout_width="match_parent"
-            android:layout_height="83dp"
-            android:drawableLeft="@drawable/japanfood_custom"
-            android:drawablePadding="50dip"
-            android:paddingLeft="50dip"
-            android:text="일식"
-            android:textSize="24sp" />
-
-        <View
-            android:id="@+id/r_line4"
-            android:layout_width="match_parent"
-            android:layout_height="0.7dp"
-            android:background="#808080" />
-
-        <RadioButton
-            android:id="@+id/radiobtn_fish"
-            android:layout_width="match_parent"
-            android:layout_height="83dp"
-            android:drawableLeft="@drawable/fish_custom"
-            android:drawablePadding="50dip"
-            android:paddingLeft="50dip"
-            android:text="어류"
-            android:textSize="24sp" />
-
-        <View
-            android:id="@+id/r_line5"
-            android:layout_width="match_parent"
-            android:layout_height="0.7dp"
-            android:background="#808080" />
-
-        <RadioButton
-            android:id="@+id/radiobtn_noodle"
-            android:layout_width="match_parent"
-            android:layout_height="83dp"
-            android:drawableLeft="@drawable/noodle_custom"
-            android:drawablePadding="50dip"
-            android:paddingLeft="50dip"
-            android:text="면류"
-            android:textSize="24sp" />
-
-        <View
-            android:id="@+id/r_line6"
-            android:layout_width="match_parent"
-            android:layout_height="0.7dp"
-            android:background="#808080" />
-
-        <RadioButton
-            android:id="@+id/radiobtn_snackfood"
-            android:layout_width="match_parent"
-            android:layout_height="83dp"
-            android:drawableLeft="@drawable/snackfood_custom"
-            android:drawablePadding="50dip"
-            android:paddingLeft="50dip"
-            android:text="분식"
-            android:textSize="24sp" />
-
-    </RadioGroup>
-
-    <Button
-        android:id="@+id/btn_popupok"
-        android:layout_width="244dp"
+    <LinearLayout
+        android:layout_width="288dp"
         android:layout_height="wrap_content"
-        android:backgroundTint="#FFC000"
-        android:text="완료"
-        android:textColor="#FFFFFF" />" />
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <RadioGroup
+            android:layout_width="284dp"
+            android:layout_height="607dp"
+            android:layout_marginTop="20dp">
+
+            <RadioButton
+                android:id="@+id/radiobtn_chicken"
+                android:layout_width="match_parent"
+                android:layout_height="83dp"
+                android:drawableLeft="@drawable/hen_custom"
+                android:drawablePadding="50dip"
+                android:paddingLeft="50dip"
+                android:text="치킨"
+                android:textSize="24sp" />
+
+            <View
+                android:id="@+id/r_line"
+                android:layout_width="match_parent"
+                android:layout_height="0.7dp"
+                android:background="#808080" />
+
+            <RadioButton
+                android:id="@+id/radiobtn_westfood"
+                android:layout_width="match_parent"
+                android:layout_height="83dp"
+                android:drawableLeft="@drawable/westfood_custom"
+                android:drawablePadding="50dip"
+                android:paddingLeft="50dip"
+                android:text="양식"
+                android:textSize="24sp" />
+
+            <View
+                android:id="@+id/r_line2"
+                android:layout_width="match_parent"
+                android:layout_height="0.7dp"
+                android:background="#808080" />
+
+            <RadioButton
+                android:id="@+id/radiobtn_korfood"
+                android:layout_width="match_parent"
+                android:layout_height="83dp"
+                android:drawableLeft="@drawable/koreanfood_custom"
+                android:drawablePadding="50dip"
+                android:paddingLeft="50dip"
+                android:text="한식"
+                android:textSize="24sp" />
+
+            <View
+                android:id="@+id/r_line3"
+                android:layout_width="match_parent"
+                android:layout_height="0.7dp"
+                android:background="#808080" />
+
+            <RadioButton
+                android:id="@+id/radiobtn_japanfood"
+                android:layout_width="match_parent"
+                android:layout_height="83dp"
+                android:drawableLeft="@drawable/japanfood_custom"
+                android:drawablePadding="50dip"
+                android:paddingLeft="50dip"
+                android:text="일식"
+                android:textSize="24sp" />
+
+            <View
+                android:id="@+id/r_line4"
+                android:layout_width="match_parent"
+                android:layout_height="0.7dp"
+                android:background="#808080" />
+
+            <RadioButton
+                android:id="@+id/radiobtn_fish"
+                android:layout_width="match_parent"
+                android:layout_height="83dp"
+                android:drawableLeft="@drawable/fish_custom"
+                android:drawablePadding="50dip"
+                android:paddingLeft="50dip"
+                android:text="어류"
+                android:textSize="24sp" />
+
+            <View
+                android:id="@+id/r_line5"
+                android:layout_width="match_parent"
+                android:layout_height="0.7dp"
+                android:background="#808080" />
+
+            <RadioButton
+                android:id="@+id/radiobtn_noodle"
+                android:layout_width="match_parent"
+                android:layout_height="83dp"
+                android:drawableLeft="@drawable/noodle_custom"
+                android:drawablePadding="50dip"
+                android:paddingLeft="50dip"
+                android:text="면류"
+                android:textSize="24sp" />
+
+            <View
+                android:id="@+id/r_line6"
+                android:layout_width="match_parent"
+                android:layout_height="0.7dp"
+                android:background="#808080" />
+
+            <RadioButton
+                android:id="@+id/radiobtn_snackfood"
+                android:layout_width="match_parent"
+                android:layout_height="83dp"
+                android:drawableLeft="@drawable/snackfood_custom"
+                android:drawablePadding="50dip"
+                android:paddingLeft="50dip"
+                android:text="분식"
+                android:textSize="24sp" />
+
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/btn_popupok"
+            android:layout_width="244dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FFC000"
+            android:text="완료"
+            android:textColor="#FFFFFF" />
+    </LinearLayout><![CDATA[
+
+    " />
 
 
+]]>
 </LinearLayout>

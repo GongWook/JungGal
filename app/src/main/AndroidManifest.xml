@@ -9,28 +9,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.JungGar">
-
-        <!-- 스플래쉬 액티비티 -->
-        <activity android:name=".SplashActivity"
-            android:theme ="@style/SplashTheme">
+        <activity android:name=".SearchActivity"></activity>
+        <activity android:name=".RecyclerActivity" />
+        <activity android:name=".MarkerchooseActivity" /> <!-- 스플래쉬 액티비티 -->
+        <activity
+            android:name=".SplashActivity"
+            android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-       <!-- 메인 엑티비티 -->
-        <activity android:name=".LoginActivity">
-
-        </activity>
-        <activity android:name=".RegisterActivity">
-
-        </activity>
-
-        <activity android:name=".MainActivity">
-
-        </activity>
-
+        </activity> <!-- 메인 엑티비티 -->
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".RegisterActivity" />
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>

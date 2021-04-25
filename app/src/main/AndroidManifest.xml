@@ -20,7 +20,9 @@
         </activity>
 
        <!-- 메인 엑티비티 -->
+        <activity android:name=".LoginActivity">
 
+        </activity>
         <activity android:name=".MainActivity">
 
         </activity>

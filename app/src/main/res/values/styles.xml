@@ -3,8 +3,10 @@
 
     <style name ="AppTheme" parent="@style/Theme.AppCompat.Light.DarkActionBar"/>
 
+        <!-- Splash 화면 -->
     <style name="SplashTheme" parent= "@android:style/Theme.Light.NoTitleBar">
         <item name = "android:windowBackground">@drawable/splash_img</item>
     </style>
+
 
 </resources>

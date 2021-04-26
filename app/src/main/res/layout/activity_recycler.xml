@@ -26,7 +26,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:includeFontPadding="false"
-            android:text="<종욱이네 떡볶이>"
+            android:text="&lt;종욱이네 떡볶이&lt;"
             android:textSize="18sp"
             android:textStyle="bold"/>
 

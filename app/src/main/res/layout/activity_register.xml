@@ -73,14 +73,15 @@
                 android:src="@drawable/userid_icon"/>
 
             <EditText
+                android:id="@+id/Edit_nickname"
                 android:layout_width="match_parent"
                 android:layout_height="42dp"
                 android:layout_gravity="center"
-                android:hint="이름 ( 별명 )"
-                android:ems="4"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
-                android:inputType="text"/>
+                android:ems="4"
+                android:hint="이름 ( 별명 )"
+                android:inputType="text" />
 
         </LinearLayout>
 
@@ -97,15 +98,16 @@
                 android:src="@drawable/userid_icon"/>
 
             <EditText
+                android:id="@+id/Edit_id"
                 android:layout_width="match_parent"
-                android:layout_height="42dp"
+                android:layout_height="44dp"
                 android:layout_gravity="center"
-                android:hint="이메일"
-                android:ems="4"
                 android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
                 android:layout_marginTop="2dp"
-                android:inputType="textEmailAddress"/>
+                android:layout_marginRight="20dp"
+                android:ems="4"
+                android:hint="이메일"
+                android:inputType="textEmailAddress" />
 
         </LinearLayout>
         <LinearLayout
@@ -121,15 +123,16 @@
                 android:src="@drawable/passlock_icon"/>
 
             <EditText
+                android:id="@+id/Edit_password"
                 android:layout_width="match_parent"
                 android:layout_height="42dp"
                 android:layout_gravity="center"
-                android:hint="비밀번호"
-                android:ems="4"
                 android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
                 android:layout_marginTop="2dp"
-                android:inputType="textPassword"/>
+                android:layout_marginRight="20dp"
+                android:ems="4"
+                android:hint="비밀번호"
+                android:inputType="textPassword" />
 
         </LinearLayout>
         <LinearLayout
@@ -145,15 +148,16 @@
                 android:src="@drawable/passcheck_icon"/>
 
             <EditText
+                android:id="@+id/Edit_passwordchk"
                 android:layout_width="match_parent"
                 android:layout_height="42dp"
                 android:layout_gravity="center"
-                android:hint="비밀번호 확인"
-                android:ems="4"
                 android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
                 android:layout_marginTop="2dp"
-                android:inputType="textPassword"/>
+                android:layout_marginRight="20dp"
+                android:ems="4"
+                android:hint="비밀번호 확인"
+                android:inputType="textPassword" />
 
         </LinearLayout>
         <LinearLayout
@@ -219,17 +223,18 @@
         </LinearLayout>
 
         <Button
+            android:id="@+id/Btn_register"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
+            android:layout_marginLeft="20dp"
             android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
             android:layout_weight="0"
             android:backgroundTint="#FFC000"
+            android:gravity="center"
             android:text="회원가입"
             android:textAllCaps="false"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:textColor="#FFFFFF"/>
+            android:textColor="#FFFFFF" />
 
     </LinearLayout>
 

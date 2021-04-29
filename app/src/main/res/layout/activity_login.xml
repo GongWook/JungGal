@@ -33,13 +33,14 @@
                 android:src="@drawable/userid_icon" />
 
             <EditText
+                android:id="@+id/Login_id"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:hint="아이디"
-                android:ems="12"
                 android:layout_marginLeft="15dp"
-                android:inputType="textEmailAddress"/>
+                android:ems="12"
+                android:hint="아이디"
+                android:inputType="textEmailAddress" />
 
         </LinearLayout>
 
@@ -57,12 +58,13 @@
                 android:src="@drawable/passlock_icon"/>
 
             <EditText
+                android:id="@+id/Login_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
                 android:ems="12"
                 android:hint="비밀번호"
-                android:layout_marginLeft="15dp"
-                android:inputType="textPassword"/>
+                android:inputType="textPassword" />
 
         </LinearLayout>
 
@@ -94,15 +96,16 @@
 
 
         <Button
+            android:id="@+id/Btn_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:layout_marginTop="20dp"
             android:layout_weight="0"
             android:backgroundTint="#FFC000"
+            android:gravity="center"
             android:text="로그인"
             android:textAllCaps="false"
-            android:textColor="#FFFFFF"/>
+            android:textColor="#FFFFFF" />
 
     </LinearLayout>
 

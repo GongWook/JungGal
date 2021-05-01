@@ -12,7 +12,7 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         try{
-            Thread.sleep(2000);
+            Thread.sleep(4000);
         }
         catch(InterruptedException e)
         {

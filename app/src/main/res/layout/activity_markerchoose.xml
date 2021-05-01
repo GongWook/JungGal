@@ -9,10 +9,9 @@
     tools:context=".MainActivity">
 
     <LinearLayout
-        android:layout_width="417dp"
+        android:layout_width="410dp"
         android:layout_height="50dp"
         android:layout_gravity="start"
-        android:layout_marginLeft="5dp"
         android:layout_marginTop="10dp">
 
         <ImageView
@@ -27,6 +26,7 @@
             android:layout_height="32dp"
             android:layout_marginLeft="53.5dp"
             android:layout_marginRight="53.5dp"
+            android:fontFamily="@font/namugodikl"
             android:text="팝업 마커 모양 선택"
             android:textColor="#000000"
             android:textSize="24sp" />
@@ -46,6 +46,7 @@
             android:drawableLeft="@drawable/hen_custom"
             android:drawablePadding="50dip"
             android:paddingLeft="50dip"
+            android:fontFamily="@font/namugodikl"
             android:text="치킨"
             android:textSize="24sp" />
 
@@ -62,6 +63,7 @@
             android:drawableLeft="@drawable/westfood_custom"
             android:drawablePadding="50dip"
             android:paddingLeft="50dip"
+            android:fontFamily="@font/namugodikl"
             android:text="양식"
             android:textSize="24sp" />
 
@@ -78,6 +80,7 @@
             android:drawableLeft="@drawable/koreanfood_custom"
             android:drawablePadding="50dip"
             android:paddingLeft="50dip"
+            android:fontFamily="@font/namugodikl"
             android:text="한식"
             android:textSize="24sp" />
 
@@ -94,6 +97,7 @@
             android:drawableLeft="@drawable/japanfood_custom"
             android:drawablePadding="50dip"
             android:paddingLeft="50dip"
+            android:fontFamily="@font/namugodikl"
             android:text="일식"
             android:textSize="24sp" />
 
@@ -110,6 +114,7 @@
             android:drawableLeft="@drawable/fish_custom"
             android:drawablePadding="50dip"
             android:paddingLeft="50dip"
+            android:fontFamily="@font/namugodikl"
             android:text="어류"
             android:textSize="24sp" />
 
@@ -126,6 +131,7 @@
             android:drawableLeft="@drawable/noodle_custom"
             android:drawablePadding="50dip"
             android:paddingLeft="50dip"
+            android:fontFamily="@font/namugodikl"
             android:text="면류"
             android:textSize="24sp" />
 
@@ -142,6 +148,7 @@
             android:drawableLeft="@drawable/snackfood_custom"
             android:drawablePadding="50dip"
             android:paddingLeft="50dip"
+            android:fontFamily="@font/namugodikl"
             android:text="분식"
             android:textSize="24sp" />
 
@@ -152,6 +159,7 @@
         android:layout_width="244dp"
         android:layout_height="wrap_content"
         android:backgroundTint="#FFC000"
+        android:fontFamily="@font/namugodikl"
         android:text="완료"
         android:textColor="#FFFFFF" />" />
 

@@ -13,9 +13,10 @@
 
         <ImageView
             android:id="@+id/iv_image"
-            android:layout_width="55dp"
-            android:layout_height="55dp"
-            android:src="@drawable/tubg" />
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:src="@drawable/userid_icon" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -23,37 +24,28 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/tv_title"
+                android:id="@+id/tv_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10sp"
                 android:layout_marginLeft="10sp"
                 android:includeFontPadding="false"
-                android:text="&lt;종욱이네 떡볶이&lt;"
+                android:text="수연"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/tv_content"
+                android:id="@+id/tv_comment"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10sp"
+                android:layout_marginTop="5sp"
+                android:layout_marginLeft="20sp"
                 android:includeFontPadding="false"
-                android:text="6시~8시 사이에 제가 만든 떡볶이 나눔해 드려요"
+                android:text="종욱씨 저 6시에 나눔 받고 싶어요~~"
                 android:textSize="15sp" />
 
-            <TextView
-                android:id="@+id/tv_time"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="right"
-                android:layout_marginRight="10dp"
-                android:text="04-25 12:44"
-                android:textSize="12sp" />
         </LinearLayout>
 
     </LinearLayout>
-
-
 
 </LinearLayout>

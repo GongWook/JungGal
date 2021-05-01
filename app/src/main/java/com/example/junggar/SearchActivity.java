@@ -1,64 +1,67 @@
 package com.example.junggar;
 
+/*import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.util.Log;
 
 //import java.util.Arrays;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
 import java.util.List;//
 
 public class SearchActivity extends AppCompatActivity {
+    private RecyclerView recyclerView;
+    private RecyclerView.Adapter adapter;
+    private RecyclerView.LayoutManager layoutManager;
+    private ArrayList<Contents> arrayList;
+    private FirebaseDatabase database;
+    private DatabaseReference databaseReference;
 
-    //private List<String> items = Arrays.asList("치킨","피자","떡볶이","파스타"); textview로 검색 구현 코드//
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
 
+        recyclerView =findViewById(R.id.recyclerview);
+        recyclerView.setHasFixedSize(true);
+        layoutManager=new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
+        arrayList=new ArrayList<>();
 
-        //SearchView searchView = findViewById(R.id.search_view);
-        //        TextView resultTextView = findViewById(R.id.textView);
-        //        resultTextView.setText(getResult());
-        //
-        //        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-        //            @Override
-        //            public boolean onQueryTextSubmit(String query) {
-        //                return false;
-        //            }
-        //
-        //            @Override
-        //            public boolean onQueryTextChange(String newText) {
-        //                resultTextView.setText(search(newText));
-        //                return true;
-        //            }
-        //        });
-        //    }
-        //
-        //    private String search(String query){
-        //        StringBuilder sb = new StringBuilder();
-        //        for (int i =0; i<items.size(); i++) {
-        //            String item = items.get(i);
-        //            if (item.toLowerCase().contains(query.toLowerCase())) {
-        //                sb.append(item);
-        //                if (i != items.size() - 1) {
-        //                    sb.append("\n");
-        //                }
-        //            }
-        //        }
-        //        return sb.toString();
-        //    }
-        //
-        //    private String getResult(){
-        //        StringBuilder sb = new StringBuilder();
-        //        for (int i =0; i<items.size(); i++){
-        //            String item = items.get(i);
-        //            sb.append(item);
-        //            if(i!= items.size()-1){
-        //                sb.append("\n");
-        //            }
-        //        }
-        //        return sb.toString();
-        //    }  textview일 때 검색 구현
+        database=FirebaseDatabase.getInstance();
+
+        databaseReference=database.getReference("Contents");
+        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                arrayList.clear();
+                for(DataSnapshot snapshot1 : snapshot.getChildren()){
+                    Contents contents = snapshot.getValue(Contents.class);
+                    arrayList.add(contents);
+                }
+                adapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Log.e("RecyclerActivity", String.valueOf(error.toException()));
+            }
+        });
+
+        adapter=new CustomAdapter(arrayList,this);
+        recyclerView.setAdapter(adapter);
+
+
+
     }
-}
+}*/

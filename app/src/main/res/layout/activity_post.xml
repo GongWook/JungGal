@@ -56,12 +56,14 @@
                         android:id="@+id/post_username"
                         android:layout_width="71dp"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/namugodikl"
                         android:text="김OO" />
 
                     <TextView
                         android:id="@+id/post_usergender"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/namugodikl"
                         android:text="성별란" />
                 </LinearLayout>
 
@@ -69,6 +71,7 @@
                     android:id="@+id/post_introduce"
                     android:layout_width="match_parent"
                     android:layout_height="39dp"
+                    android:fontFamily="@font/namugodikl"
                     android:text="자기소개란 (글들은 나중에 지울거에요 임시)" />
 
             </LinearLayout>
@@ -126,6 +129,7 @@
                 android:layout_height="31dp"
                 android:layout_margin="10dp"
                 android:gravity="center_horizontal"
+                android:fontFamily="@font/namugodikl"
                 android:text="글 제목부" />
 
             <TextView
@@ -133,6 +137,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="176dp"
                 android:gravity="center_horizontal"
+                android:fontFamily="@font/namugodikl"
                 android:text="글 내용부" />
 
         </LinearLayout>

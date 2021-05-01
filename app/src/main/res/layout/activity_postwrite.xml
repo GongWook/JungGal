@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="start"
+        android:layout_marginTop="10dp"
+        android:gravity="center_horizontal|center_vertical">
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:fontFamily="@font/namugodikl"
+            android:text="닫기"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="161dp"
+            android:layout_height="32dp"
+            android:layout_marginLeft="53.5dp"
+            android:layout_marginRight="53.5dp"
+            android:fontFamily="@font/namugodikl"
+            android:text="반찬나눔 글쓰기"
+            android:textColor="#000000"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:fontFamily="@font/namugodikl"
+            android:text="완료"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/r_line8"
+        android:layout_width="match_parent"
+        android:layout_height="0.7dp"
+        android:background="#808080" />
+
+    <LinearLayout
+        android:layout_width="380dp"
+        android:layout_height="672dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="79dp"
+            android:orientation="horizontal"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <View
+                android:id="@+id/r_line11"
+                android:layout_width="match_parent"
+                android:layout_height="0.7dp"
+                android:background="#808080" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_margin="10dp"
+                android:gravity="center_vertical"
+                android:fontFamily="@font/namugodikl"
+                android:hint="글 제목"
+                android:textSize="20sp" />
+
+            <View
+                android:id="@+id/r_line12"
+                android:layout_width="match_parent"
+                android:layout_height="0.7dp"
+                android:background="#808080" />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_margin="10dp"
+                android:drawableRight="@drawable/back_icon_right_custom"
+                android:drawablePadding="50dip"
+                android:gravity="center_vertical"
+                android:fontFamily="@font/namugodikl"
+                android:text="위치 공유"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <View
+                android:id="@+id/r_line13"
+                android:layout_width="match_parent"
+                android:layout_height="0.7dp"
+                android:background="#808080" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_margin="10dp"
+                android:drawableRight="@drawable/back_icon_right_custom"
+                android:drawablePadding="50dip"
+                android:gravity="center_vertical"
+                android:fontFamily="@font/namugodikl"
+                android:text="팝업 모양 선택"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <View
+                android:id="@+id/r_line14"
+                android:layout_width="match_parent"
+                android:layout_height="0.7dp"
+                android:background="#808080" />
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_margin="10dp"
+                android:drawableRight="@drawable/back_icon_right_custom"
+                android:drawablePadding="50dip"
+                android:gravity="center_vertical"
+                android:fontFamily="@font/namugodikl"
+                android:text="식품 알레르기 표시"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <View
+                android:id="@+id/r_line15"
+                android:layout_width="match_parent"
+                android:layout_height="0.7dp"
+                android:background="#808080" />
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:fontFamily="@font/namugodikl"
+                android:hint="당신의 반찬을 기다리고 있는 사람들에게\n당신의 이야기를 전해주세요 :)\n\n작성예시
+                \n\n- 반찬을 만든 시각\n- 반찬 나눔시간\n- 반찬 량\n- 반찬의 특징"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

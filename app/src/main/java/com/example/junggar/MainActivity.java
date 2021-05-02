@@ -74,6 +74,11 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         //실내 지도 옵션 on
         naverMap.setIndoorEnabled(true);
+
+        //naver map ui setting
+        UiSettings uiSettings = naverMap.getUiSettings();
+        uiSettings.setCompassEnabled(true);
+        uiSettings.setLocationButtonEnabled(true);
     }
 
 }

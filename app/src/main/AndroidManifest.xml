@@ -10,12 +10,15 @@
        android:supportsRtl="true"
        android:theme="@style/Theme.JungGar">
 
+      <meta-data
+          android:name="com.naver.maps.map.CLIENT_ID"
+          android:value="qjrwp3yzr9"/>
+
        <activity
            android:name=".SplashActivity"
            android:theme="@style/SplashTheme">
            <intent-filter>
                <action android:name="android.intent.action.MAIN" />
-
                <category android:name="android.intent.category.LAUNCHER" />
            </intent-filter>
         </activity>
@@ -23,10 +26,11 @@
         <activity android:name=".RegisterActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".AllergyActivity"/>
-      <activity android:name=".commentActivity" />
         <activity android:name=".MarkerchooseActivity" />
         <activity android:name=".PrefermenuActivity" />
-      <activity android:name=".SearchActivity"/>
+        <activity android:name=".SearchActivity"/>
+
+
   </application>
 
 </manifest>

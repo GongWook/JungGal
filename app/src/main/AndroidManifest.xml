@@ -30,7 +30,6 @@
         <activity android:name=".PrefermenuActivity" />
         <activity android:name=".SearchActivity"/>
 
-
   </application>
 
 </manifest>

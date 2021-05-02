@@ -32,7 +32,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         TextView registerbutton = findViewById(R.id.register_button);
-        Button tmp_btn = findViewById(R.id.Btn_tmp);
+        Button tmp_btn = (Button) findViewById(R.id.Btn_tmp);
 
         email_login = (EditText) findViewById(R.id.Login_id);
         pwd_login = (EditText) findViewById(R.id.Login_password);

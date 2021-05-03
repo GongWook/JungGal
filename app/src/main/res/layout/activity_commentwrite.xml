@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="410dp"
+        android:layout_height="50dp"
+        android:layout_gravity="start"
+        android:layout_marginTop="10dp"
+        android:gravity="center_horizontal">
+
+        <ImageView
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_margin="12dp"
+            android:src="@drawable/back_icon" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="260dp"
+            android:layout_height="32dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="75dp"
+            android:fontFamily="@font/namugodikl"
+            android:text="종욱이네 나눔이 댓글 작성"
+            android:textColor="#000000"
+            android:textSize="24sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="380dp"
+        android:layout_height="672dp"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="match_parent"
+            android:layout_height="583dp"
+            android:layout_margin="12dp"
+            android:background="@drawable/commentwrite_custom"
+            android:elevation="50dp"
+            android:hint="댓글을 작성해 주세요:)"
+            android:paddingLeft="20dip"
+            android:paddingTop="20dip"
+            android:textColor="#00000000"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="310dp"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/namugodikl"
+            android:text="완료"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+    </LinearLayout>
+</LinearLayout>

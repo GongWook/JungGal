@@ -70,8 +70,6 @@ public class RegisterActivity extends AppCompatActivity {
         });
 
 
-
-
         firebaseAuth = FirebaseAuth.getInstance();
 
         btn.setOnClickListener(new View.OnClickListener() {
@@ -92,6 +90,7 @@ public class RegisterActivity extends AppCompatActivity {
                             if(task.isSuccessful()){
 
                                 Map<String, Object> user = new HashMap<>();
+                                user.put("id",email);
                                 user.put("name", name);
                                 user.put("gender", Gender);
                                 user.put("self_introduce", introduce);

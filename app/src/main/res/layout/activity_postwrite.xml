@@ -74,7 +74,7 @@
                 android:layout_height="0.7dp"
                 android:background="#808080" />
 
-            <TextView
+            <EditText
                 android:id="@+id/textView6"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
@@ -82,7 +82,7 @@
                 android:gravity="center_vertical"
                 android:fontFamily="@font/namugodikl"
                 android:hint="글 제목"
-                android:textSize="20sp" />
+                android:textSize="15sp" />
 
             <View
                 android:id="@+id/r_line12"
@@ -147,10 +147,11 @@
                 android:layout_height="0.7dp"
                 android:background="#808080" />
 
-            <TextView
+            <EditText
                 android:id="@+id/textView10"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:gravity="start"
                 android:layout_margin="10dp"
                 android:fontFamily="@font/namugodikl"
                 android:hint="당신의 반찬을 기다리고 있는 사람들에게\n당신의 이야기를 전해주세요 :)\n\n작성예시

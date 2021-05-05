@@ -180,19 +180,20 @@
                 android:layout_marginTop="10dp">
 
                 <RadioGroup
+                    android:id="@+id/Gender_radioGroup"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
 
                     <RadioButton
-                        android:id="@+id/radioButton3"
+                        android:id="@+id/male"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingLeft="5dp"
                         android:text="남성" />
 
                     <RadioButton
-                        android:id="@+id/radioButton4"
+                        android:id="@+id/female"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingLeft="5dp"
@@ -210,6 +211,7 @@
 
 
             <EditText
+                android:id="@+id/Edit_introduce"
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
                 android:inputType="textMultiLine"

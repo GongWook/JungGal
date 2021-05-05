@@ -6,19 +6,11 @@ import androidx.fragment.app.FragmentManager;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
+import android.widget.ImageView;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
 import com.naver.maps.map.LocationTrackingMode;
 import com.naver.maps.map.MapFragment;
-import com.naver.maps.map.MapView;
 import com.naver.maps.map.NaverMap;
 import com.naver.maps.map.OnMapReadyCallback;
 import com.naver.maps.map.UiSettings;
@@ -35,6 +27,16 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        ImageView writeBtn = (ImageView) findViewById(R.id.Btn_write);
+
+        //작성 창으로 넘어가기
+        writeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, PostWriteActivity.class);
+                startActivity(intent);
+            }
+        });
 
         //네이버 지도 객체 call
         FragmentManager fm = getSupportFragmentManager();
@@ -48,6 +50,9 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         //사용자 위치 받아오기
         locationSource =
                 new FusedLocationSource(this, LOCATION_PERMISSION_REQUEST_CODE);
+
+        //작성 버튼
+
     }
 
     //gps 사용 권환 거부 했을 시 위치 추적 거부 내용

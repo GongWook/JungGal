@@ -23,7 +23,7 @@
             android:src="@drawable/back_icon" />
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/text_quizstage"
             android:layout_width="197dp"
             android:layout_height="32dp"
             android:layout_marginLeft="53.5dp"

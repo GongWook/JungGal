@@ -70,9 +70,9 @@
                 <TextView
                     android:id="@+id/post_introduce"
                     android:layout_width="match_parent"
-                    android:layout_height="39dp"
+                    android:layout_height="49dp"
                     android:fontFamily="@font/namugodikl"
-                    android:text="자기소개란 (글들은 나중에 지울거에요 임시)" />
+                    android:text="자기소개란" />
 
             </LinearLayout>
 

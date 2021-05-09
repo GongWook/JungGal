@@ -113,6 +113,12 @@
             android:layout_height="wrap_content"
             android:text="임시 버튼 recyclerview" />
 
+        <Button
+            android:id="@+id/Btn_dongtest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="동욱 실험용" />
+
     </LinearLayout>
 
 

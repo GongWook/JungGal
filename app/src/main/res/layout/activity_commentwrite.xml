@@ -20,7 +20,6 @@
             android:src="@drawable/back_icon" />
 
         <TextView
-            android:id="@+id/textView"
             android:layout_width="260dp"
             android:layout_height="32dp"
             android:layout_marginLeft="25dp"

@@ -24,7 +24,6 @@
             android:textSize="20sp" />
 
         <TextView
-            android:id="@+id/textView"
             android:layout_width="161dp"
             android:layout_height="32dp"
             android:layout_marginLeft="53.5dp"

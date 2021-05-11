@@ -33,6 +33,7 @@ public class LoginActivity extends AppCompatActivity {
 
         TextView registerbutton = findViewById(R.id.register_button);
         Button tmp_btn = (Button) findViewById(R.id.Btn_tmp);
+        Button test_yong = (Button) findViewById(R.id.Btn_dongtest);
 
         email_login = (EditText) findViewById(R.id.Login_id);
         pwd_login = (EditText) findViewById(R.id.Login_password);
@@ -51,6 +52,14 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(LoginActivity.this, SearchActivity.class );
+                startActivity(intent);
+            }
+        });
+
+        test_yong.setOnClickListener(new View.OnClickListener() {             // 동욱 테스트용 나중에 지우겠습니당
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, QuizpageActivity.class );
                 startActivity(intent);
             }
         });

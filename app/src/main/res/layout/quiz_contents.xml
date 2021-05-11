@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginTop="10dp">
+
+        <ImageView
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_margin="12dp"
+            android:src="@drawable/back_icon" />
+
+        <TextView
+            android:id="@+id/text_quizstage"
+            android:layout_width="154dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="80dp"
+            android:layout_marginLeft="78dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginRight="38dp"
+
+            android:fontFamily="@font/namugodikl"
+            android:scaleType="centerInside"
+            android:textColor="#000000"
+            android:textSize="24sp" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="75dp"
+            android:layout_height="58dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/text_question"
+            android:layout_width="350dp"
+            android:layout_height="180dp"
+            android:background="@drawable/commentwrite_custom"
+            android:backgroundTint="#FF8571"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="TextView"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp" />
+
+        <LinearLayout
+            android:layout_width="360dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/text_answer1"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/text_answer_custom"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="TextView"
+                android:textColor="#FF8571"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/text_answer2"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/text_answer_custom"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="TextView"
+                android:textColor="#FF8571" />
+
+            <Button
+                android:id="@+id/text_answer3"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/text_answer_custom"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="TextView"
+                android:textColor="#FF8571" />
+
+            <Button
+                android:id="@+id/text_answer4"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/text_answer_custom"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="TextView"
+                android:textColor="#FF8571" />
+
+            <Button
+                android:id="@+id/text_answer5"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/text_answer_custom"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="TextView"
+                android:textColor="#FF8571" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

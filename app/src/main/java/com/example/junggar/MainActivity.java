@@ -6,26 +6,45 @@ import androidx.fragment.app.FragmentManager;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.GeoPoint;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.naver.maps.geometry.LatLng;
 import com.naver.maps.map.LocationTrackingMode;
 import com.naver.maps.map.MapFragment;
 import com.naver.maps.map.NaverMap;
 import com.naver.maps.map.OnMapReadyCallback;
 import com.naver.maps.map.UiSettings;
+import com.naver.maps.map.overlay.Marker;
 import com.naver.maps.map.util.FusedLocationSource;
 
-public class MainActivity extends AppCompatActivity implements OnMapReadyCallback {
+import java.util.ArrayList;
+import java.util.Map;
+import java.util.concurrent.Executor;
+
+public class  MainActivity extends AppCompatActivity implements OnMapReadyCallback {
+
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 1000;
     private FusedLocationSource locationSource;
     private NaverMap naverMap;
+    private Map<String, Object> result;
+    GeoPoint position;
+    ArrayList<LatLng> latLngArrayList = new ArrayList<>();
+    ArrayList<Marker> markerArrayList = new ArrayList<>();
+    int position_cnt=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        onResume();
 
         ImageView writeBtn = (ImageView) findViewById(R.id.Btn_write);
 
@@ -53,7 +72,26 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         //작성 버튼
 
-    }
+        //지도 좌표 위치 들고 오기
+        Executor executor = command -> {
+            Thread thread = new Thread(command);
+            thread.start();
+        };
+
+        db.collection("posts").get().addOnSuccessListener(executor, queryDocumentSnapshots -> {
+            for (QueryDocumentSnapshot document : queryDocumentSnapshots) {
+                // Get data from DB
+                result = document.getData();
+                position = (GeoPoint) result.get("position");
+                LatLng latlng = new LatLng(position.getLatitude(), position.getLongitude());
+
+                // Make marker from GetPoint
+                Marker marker = new Marker();
+                marker.setPosition(latlng);
+                markerArrayList.add(marker);
+            }
+        });
+    };
 
     //gps 사용 권환 거부 했을 시 위치 추적 거부 내용
     @Override
@@ -72,6 +110,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     @Override
     public void onMapReady(@NonNull NaverMap naverMap) {
+        Log.d("StartCheck", "onMapReady starts here");
+
         //사용자 위치 추적
         this.naverMap = naverMap;
         naverMap.setLocationSource(locationSource);
@@ -84,6 +124,10 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         UiSettings uiSettings = naverMap.getUiSettings();
         uiSettings.setCompassEnabled(true);
         uiSettings.setLocationButtonEnabled(true);
-    }
 
+        for (Marker m : markerArrayList) m.setMap(naverMap);
+    }
 }
+
+
+

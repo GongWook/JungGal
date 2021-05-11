@@ -36,6 +36,7 @@
         <activity android:name=".PrefermenuActivity" />
         <activity android:name=".SearchActivity" />
         <activity android:name=".PostWriteActivity"/>
+        <activity android:name=".PositionActivity"/>
     </application>
 
 </manifest>

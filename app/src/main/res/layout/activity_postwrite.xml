@@ -35,7 +35,7 @@
             android:textSize="24sp" />
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/Btn_submit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="12dp"
@@ -75,7 +75,7 @@
                 android:background="#808080" />
 
             <EditText
-                android:id="@+id/textView6"
+                android:id="@+id/Edit_title"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
                 android:layout_margin="10dp"
@@ -91,7 +91,7 @@
                 android:background="#808080" />
 
             <TextView
-                android:id="@+id/textView7"
+                android:id="@+id/Text_position"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
                 android:layout_margin="10dp"
@@ -110,7 +110,7 @@
                 android:background="#808080" />
 
             <TextView
-                android:id="@+id/textView8"
+                android:id="@+id/Text_Popup"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
                 android:layout_margin="10dp"
@@ -129,7 +129,7 @@
                 android:background="#808080" />
 
             <TextView
-                android:id="@+id/textView9"
+                android:id="@+id/Text_Allergy"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
                 android:layout_margin="10dp"

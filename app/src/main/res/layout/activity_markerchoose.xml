@@ -6,11 +6,12 @@
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
     android:orientation="vertical"
+    android:layout_margin="5dp"
     tools:context=".MainActivity">
 
     <LinearLayout
         android:layout_width="410dp"
-        android:layout_height="50dp"
+        android:layout_height="36dp"
         android:layout_gravity="start"
         android:layout_marginTop="10dp">
 
@@ -36,8 +37,8 @@
     <RadioGroup
         android:id="@+id/radiogroup"
         android:layout_width="284dp"
-        android:layout_height="607dp"
-        android:layout_marginTop="20dp">
+        android:layout_height="586dp"
+        android:layout_marginTop="0dp">
 
         <RadioButton
             android:id="@+id/radiobtn_chicken"
@@ -45,8 +46,8 @@
             android:layout_height="83dp"
             android:drawableLeft="@drawable/hen_custom"
             android:drawablePadding="50dip"
-            android:paddingLeft="50dip"
             android:fontFamily="@font/namugodikl"
+            android:paddingLeft="50dip"
             android:text="치킨"
             android:textSize="24sp" />
 
@@ -62,8 +63,8 @@
             android:layout_height="83dp"
             android:drawableLeft="@drawable/westfood_custom"
             android:drawablePadding="50dip"
-            android:paddingLeft="50dip"
             android:fontFamily="@font/namugodikl"
+            android:paddingLeft="50dip"
             android:text="양식"
             android:textSize="24sp" />
 
@@ -79,8 +80,8 @@
             android:layout_height="83dp"
             android:drawableLeft="@drawable/koreanfood_custom"
             android:drawablePadding="50dip"
-            android:paddingLeft="50dip"
             android:fontFamily="@font/namugodikl"
+            android:paddingLeft="50dip"
             android:text="한식"
             android:textSize="24sp" />
 
@@ -96,8 +97,8 @@
             android:layout_height="83dp"
             android:drawableLeft="@drawable/japanfood_custom"
             android:drawablePadding="50dip"
-            android:paddingLeft="50dip"
             android:fontFamily="@font/namugodikl"
+            android:paddingLeft="50dip"
             android:text="일식"
             android:textSize="24sp" />
 
@@ -113,8 +114,8 @@
             android:layout_height="83dp"
             android:drawableLeft="@drawable/fish_custom"
             android:drawablePadding="50dip"
-            android:paddingLeft="50dip"
             android:fontFamily="@font/namugodikl"
+            android:paddingLeft="50dip"
             android:text="어류"
             android:textSize="24sp" />
 
@@ -130,8 +131,8 @@
             android:layout_height="83dp"
             android:drawableLeft="@drawable/noodle_custom"
             android:drawablePadding="50dip"
-            android:paddingLeft="50dip"
             android:fontFamily="@font/namugodikl"
+            android:paddingLeft="50dip"
             android:text="면류"
             android:textSize="24sp" />
 
@@ -146,9 +147,9 @@
             android:layout_width="match_parent"
             android:layout_height="83dp"
             android:drawableLeft="@drawable/snackfood_custom"
-            android:drawablePadding="50dip"
-            android:paddingLeft="50dip"
+            android:drawablePadding="4dp"
             android:fontFamily="@font/namugodikl"
+            android:paddingLeft="50dip"
             android:text="분식"
             android:textSize="24sp" />
 

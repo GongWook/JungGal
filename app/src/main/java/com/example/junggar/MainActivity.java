@@ -89,6 +89,8 @@ public class  MainActivity extends AppCompatActivity implements OnMapReadyCallba
                 Marker marker = new Marker();
                 marker.setPosition(latlng);
                 markerArrayList.add(marker);
+
+
             }
         });
     };

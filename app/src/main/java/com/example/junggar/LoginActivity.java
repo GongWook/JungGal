@@ -55,15 +55,17 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
+/*
         test_yong.setOnClickListener(new View.OnClickListener() {             // 동욱 테스트용 나중에 지우겠습니당
-            @Override
-            public void onClick(View v) {
+            @Override                                                         // 동욱씨 firestoreadapter class 내용으로 인해 activity 제거와
+            public void onClick(View v) {                                     // intent 화면 연동 주석 처리 해 놓겠습니다.
                 Intent intent = new Intent(LoginActivity.this, QuizpageActivity.class );
                 startActivity(intent);
             }
         });
 
+
+ */
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

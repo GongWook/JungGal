@@ -2,6 +2,7 @@ package com.example.junggar;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -13,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.UserInfo;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.GeoPoint;
@@ -27,21 +29,29 @@ public class PostWriteActivity extends AppCompatActivity {
     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     private EditText get_title;
+    private EditText get_content;
     private double position_latitude;
     private double position_longitude;
     Intent position_intent ;
     GeoPoint position;
+    int markertype;
+    String userid;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_postwrite);
 
+        //유저 id 받아오기
+        userid = UserInfoApplication.getInstance().getGlobalUserId();
+
         TextView btn_submit = (TextView) findViewById(R.id.Btn_submit);
         TextView btn_popup = (TextView) findViewById(R.id.Text_Popup);
         TextView btn_allergy = (TextView) findViewById(R.id.Text_Allergy);
         TextView btn_position = (TextView) findViewById(R.id.Text_position);
         get_title = (EditText) findViewById(R.id.Edit_title);
+        get_content = (EditText) findViewById(R.id.Edit_content);
 
         btn_submit.setOnClickListener(new View.OnClickListener() {
 
@@ -49,10 +59,14 @@ public class PostWriteActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 final String title = get_title.getText().toString().trim();
+                final String content = get_content.getText().toString().trim();
 
                 Map<String, Object> post = new HashMap<>();
                 post.put("title", title);
                 post.put("position",position);
+                post.put("id",userid);
+                post.put("content",content);
+                post.put("markertype",markertype);
                 //post.put();
 
 
@@ -79,7 +93,7 @@ public class PostWriteActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(PostWriteActivity.this, MarkerchooseActivity.class);
-                startActivity(intent);
+                startActivityForResult(intent,2);
             }
         });
 
@@ -112,6 +126,7 @@ public class PostWriteActivity extends AppCompatActivity {
                 position = new GeoPoint(position_latitude,position_longitude);
                 break;
             case 2:
+                markertype = data.getIntExtra("markertype",1);
                 break;
             case 3:
                 break;

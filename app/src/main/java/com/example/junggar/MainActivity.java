@@ -5,7 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
@@ -20,6 +23,7 @@ import com.naver.maps.map.NaverMap;
 import com.naver.maps.map.OnMapReadyCallback;
 import com.naver.maps.map.UiSettings;
 import com.naver.maps.map.overlay.Marker;
+import com.naver.maps.map.overlay.OverlayImage;
 import com.naver.maps.map.util.FusedLocationSource;
 
 import java.util.ArrayList;
@@ -37,22 +41,31 @@ public class  MainActivity extends AppCompatActivity implements OnMapReadyCallba
     GeoPoint position;
     ArrayList<LatLng> latLngArrayList = new ArrayList<>();
     ArrayList<Marker> markerArrayList = new ArrayList<>();
-    int position_cnt=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        onResume();
 
         ImageView writeBtn = (ImageView) findViewById(R.id.Btn_write);
+        ImageView refreshBtn = (ImageView) findViewById(R.id.Btn_refresh);
 
         //작성 창으로 넘어가기
         writeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, PostWriteActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        //화면 refresh 버튼
+        refreshBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = getIntent();
+                finish();
                 startActivity(intent);
             }
         });
@@ -70,29 +83,7 @@ public class  MainActivity extends AppCompatActivity implements OnMapReadyCallba
         locationSource =
                 new FusedLocationSource(this, LOCATION_PERMISSION_REQUEST_CODE);
 
-        //작성 버튼
 
-        //지도 좌표 위치 들고 오기
-        Executor executor = command -> {
-            Thread thread = new Thread(command);
-            thread.start();
-        };
-
-        db.collection("posts").get().addOnSuccessListener(executor, queryDocumentSnapshots -> {
-            for (QueryDocumentSnapshot document : queryDocumentSnapshots) {
-                // Get data from DB
-                result = document.getData();
-                position = (GeoPoint) result.get("position");
-                LatLng latlng = new LatLng(position.getLatitude(), position.getLongitude());
-
-                // Make marker from GetPoint
-                Marker marker = new Marker();
-                marker.setPosition(latlng);
-                markerArrayList.add(marker);
-
-
-            }
-        });
     };
 
     //gps 사용 권환 거부 했을 시 위치 추적 거부 내용
@@ -127,7 +118,66 @@ public class  MainActivity extends AppCompatActivity implements OnMapReadyCallba
         uiSettings.setCompassEnabled(true);
         uiSettings.setLocationButtonEnabled(true);
 
-        for (Marker m : markerArrayList) m.setMap(naverMap);
+        //지도 좌표 위치 들고 오기
+        Executor executor = command -> {
+            Thread thread = new Thread(command);
+            thread.start();
+        };
+
+        Handler handler = new Handler(Looper.getMainLooper());
+
+        db.collection("posts").get().addOnSuccessListener(executor, queryDocumentSnapshots -> {
+            for (QueryDocumentSnapshot document : queryDocumentSnapshots) {
+                // Get data from DB
+                result = document.getData();
+                position = (GeoPoint) result.get("position");
+                LatLng latlng = new LatLng(position.getLatitude(), position.getLongitude());
+                int markerType = Integer.parseInt(String.valueOf(result.get("markertype")));
+
+                // Make marker from GetPoint
+                Marker marker = new Marker();
+                marker.setPosition(latlng);
+
+                //마커 모양 선택
+                switch (markerType){
+                    case 1:
+                        marker.setIcon(OverlayImage.fromResource(R.drawable.hen_custom));
+                        break;
+                    case 2:
+                        marker.setIcon(OverlayImage.fromResource(R.drawable.westfood_custom));
+                        break;
+                    case 3:
+                        marker.setIcon(OverlayImage.fromResource(R.drawable.koreanfood_custom));
+                        break;
+                    case 4:
+                        marker.setIcon(OverlayImage.fromResource(R.drawable.japanfood_custom));
+                        break;
+                    case 5:
+                        marker.setIcon(OverlayImage.fromResource(R.drawable.fish_custom));
+                        break;
+                    case 6:
+                        marker.setIcon(OverlayImage.fromResource(R.drawable.noodle_custom));
+                        break;
+                    case 7:
+                        marker.setIcon(OverlayImage.fromResource(R.drawable.snackfood_custom));
+                        break;
+                    default:
+                        break;
+                }
+
+                marker.setWidth(100);
+                marker.setHeight(100);
+
+
+                markerArrayList.add(marker);
+
+                handler.post(()->{
+                    for (Marker m : markerArrayList) m.setMap(naverMap);
+                });
+            }
+        });
+
+
     }
 }
 

@@ -156,7 +156,7 @@
     </RadioGroup>
 
     <Button
-        android:id="@+id/btn_popupok"
+        android:id="@+id/Btn_setpopup"
         android:layout_width="244dp"
         android:layout_height="wrap_content"
         android:backgroundTint="#FFC000"

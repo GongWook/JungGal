@@ -59,8 +59,14 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="79dp"
-            android:layout_margin="10dp"
-            android:orientation="horizontal" />
+            android:layout_margin="10dp" >
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/camera_icon"/>
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -78,8 +84,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
                 android:layout_margin="10dp"
-                android:gravity="center_vertical"
                 android:fontFamily="@font/namugodikl"
+                android:gravity="center_vertical"
                 android:hint="글 제목"
                 android:textSize="15sp" />
 
@@ -96,8 +102,8 @@
                 android:layout_margin="10dp"
                 android:drawableRight="@drawable/back_icon_right_custom"
                 android:drawablePadding="50dip"
-                android:gravity="center_vertical"
                 android:fontFamily="@font/namugodikl"
+                android:gravity="center_vertical"
                 android:text="위치 공유"
                 android:textColor="#000000"
                 android:textSize="20sp" />
@@ -115,8 +121,8 @@
                 android:layout_margin="10dp"
                 android:drawableRight="@drawable/back_icon_right_custom"
                 android:drawablePadding="50dip"
-                android:gravity="center_vertical"
                 android:fontFamily="@font/namugodikl"
+                android:gravity="center_vertical"
                 android:text="팝업 모양 선택"
                 android:textColor="#000000"
                 android:textSize="20sp" />
@@ -134,8 +140,8 @@
                 android:layout_margin="10dp"
                 android:drawableRight="@drawable/back_icon_right_custom"
                 android:drawablePadding="50dip"
-                android:gravity="center_vertical"
                 android:fontFamily="@font/namugodikl"
+                android:gravity="center_vertical"
                 android:text="식품 알레르기 표시"
                 android:textColor="#000000"
                 android:textSize="20sp" />
@@ -147,12 +153,12 @@
                 android:background="#808080" />
 
             <EditText
-                android:id="@+id/textView10"
+                android:id="@+id/Edit_content"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="start"
                 android:layout_margin="10dp"
                 android:fontFamily="@font/namugodikl"
+                android:gravity="start"
                 android:hint="당신의 반찬을 기다리고 있는 사람들에게\n당신의 이야기를 전해주세요 :)\n\n작성예시
                 \n\n- 반찬을 만든 시각\n- 반찬 나눔시간\n- 반찬 량\n- 반찬의 특징"
                 android:textSize="20sp" />

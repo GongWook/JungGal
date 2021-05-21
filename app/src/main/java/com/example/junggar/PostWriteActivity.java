@@ -133,8 +133,6 @@ public class PostWriteActivity extends AppCompatActivity {
                     }
                 });
 
-
-
                 finish();
             }
         });

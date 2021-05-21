@@ -64,8 +64,6 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
  */
         login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,6 +77,7 @@ public class LoginActivity extends AppCompatActivity {
                         if(task.isSuccessful()){
                             //성공했을 때
                             UserInfoApplication.getInstance().setGlobalUserId(email);
+                            //UserInfoApplication.getInstance().getGlobalUserId();
                             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                             startActivity(intent);
                         }else{

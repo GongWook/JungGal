@@ -39,6 +39,7 @@
         <activity android:name=".SearchActivity" />
         <activity android:name=".PostWriteActivity"/>
         <activity android:name=".PositionActivity"/>
+        <activity android:name=".PostActivity"/>
     </application>
 
 </manifest>

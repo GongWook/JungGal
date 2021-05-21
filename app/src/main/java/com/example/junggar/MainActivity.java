@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 
 import android.content.Intent;
-import android.media.Image;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -22,6 +21,7 @@ import com.naver.maps.map.MapFragment;
 import com.naver.maps.map.NaverMap;
 import com.naver.maps.map.OnMapReadyCallback;
 import com.naver.maps.map.UiSettings;
+import com.naver.maps.map.overlay.InfoWindow;
 import com.naver.maps.map.overlay.Marker;
 import com.naver.maps.map.overlay.OverlayImage;
 import com.naver.maps.map.util.FusedLocationSource;
@@ -29,6 +29,7 @@ import com.naver.maps.map.util.FusedLocationSource;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.concurrent.Executor;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class  MainActivity extends AppCompatActivity implements OnMapReadyCallback {
 
@@ -39,8 +40,10 @@ public class  MainActivity extends AppCompatActivity implements OnMapReadyCallba
     private NaverMap naverMap;
     private Map<String, Object> result;
     GeoPoint position;
+    String tmp;
     ArrayList<LatLng> latLngArrayList = new ArrayList<>();
     ArrayList<Marker> markerArrayList = new ArrayList<>();
+    ArrayList<InfoWindow> infoWindowArrayList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +53,16 @@ public class  MainActivity extends AppCompatActivity implements OnMapReadyCallba
 
         ImageView writeBtn = (ImageView) findViewById(R.id.Btn_write);
         ImageView refreshBtn = (ImageView) findViewById(R.id.Btn_refresh);
+        ImageView searchBtn = (ImageView) findViewById(R.id.Btn_search);
+
+        //검색 창으로 넘어가기
+        searchBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, SearchActivity.class);
+                startActivity(intent);
+            }
+        });
 
         //작성 창으로 넘어가기
         writeBtn.setOnClickListener(new View.OnClickListener() {
@@ -130,9 +143,11 @@ public class  MainActivity extends AppCompatActivity implements OnMapReadyCallba
             for (QueryDocumentSnapshot document : queryDocumentSnapshots) {
                 // Get data from DB
                 result = document.getData();
+
                 position = (GeoPoint) result.get("position");
                 LatLng latlng = new LatLng(position.getLatitude(), position.getLongitude());
                 int markerType = Integer.parseInt(String.valueOf(result.get("markertype")));
+                tmp = (String) result.get("title");
 
                 // Make marker from GetPoint
                 Marker marker = new Marker();
@@ -167,12 +182,50 @@ public class  MainActivity extends AppCompatActivity implements OnMapReadyCallba
 
                 marker.setWidth(100);
                 marker.setHeight(100);
+                marker.setTag(tmp);
 
+
+                InfoWindow infoWindow = new InfoWindow();
+
+                AtomicInteger sw = new AtomicInteger(1);
+
+                marker.setOnClickListener(overlay -> {
+                    // 마커를 클릭할 때 정보창을 엶
+                    if (marker.getInfoWindow() == null) {
+                        // 현재 마커에 정보 창이 열려있지 않을 경우 엶
+                        infoWindow.open(marker);
+                    } else {
+                        // 이미 현재 마커에 정보 창이 열려있을 경우 닫음
+                        infoWindow.close();
+                    }
+
+                    return true;
+                });
 
                 markerArrayList.add(marker);
+                
+                //InfoWindows 창 생성 및 연동
+                infoWindow.setAdapter(new InfoWindow.DefaultTextAdapter(getApplication()) {
+                    @NonNull
+                    @Override
+                    public CharSequence getText(@NonNull InfoWindow infoWindow) {
+                        // 정보 창이 열린 마커의 tag를 텍스트로 노출하도록 반환
+                        return (CharSequence)infoWindow.getMarker().getTag();
+                    }
+                });
+                
+                //InfoWindows 창 클릭 시
+
+                infoWindow.setOnClickListener(overlay -> {
+                    Intent intent = new Intent(MainActivity.this, PostActivity.class);
+                    intent.putExtra("title",(String)infoWindow.getMarker().getTag());
+                    startActivity(intent);
+                    return true;
+                });
 
                 handler.post(()->{
                     for (Marker m : markerArrayList) m.setMap(naverMap);
+
                 });
             }
         });

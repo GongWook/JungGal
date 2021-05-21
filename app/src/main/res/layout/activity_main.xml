@@ -22,18 +22,19 @@
 
             <TextView
                 android:id="@+id/textView13"
-                android:layout_width="250dp"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:textSize="20sp"
                 android:layout_marginTop="5dp"
-                android:text="가좌동 중심" />
+                android:text="" />
 
             <ImageView
+                android:id="@+id/Btn_search"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:layout_marginTop="10dp"
-                android:src="@drawable/refresh_icon"/>
+                android:src="@drawable/search_icon"/>
 
         </LinearLayout>
 
@@ -94,7 +95,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="45dp"
+                android:layout_width="55dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
                 android:orientation="vertical">
@@ -109,7 +110,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="작성" />
+                    android:text="뒤로가기" />
 
             </LinearLayout>
 

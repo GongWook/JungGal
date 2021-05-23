@@ -8,6 +8,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.util.Log;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -23,8 +24,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
+//import com.google.firebase.storage.FirebaseStorage;
+//import com.google.firebase.storage.StorageReference;
 import com.naver.maps.map.overlay.Marker;
 
 import org.w3c.dom.Text;
@@ -79,10 +80,10 @@ public class PostActivity extends AppCompatActivity {
 
         Handler handler = new Handler(Looper.getMainLooper());
         FirebaseFirestore db = FirebaseFirestore.getInstance();
-        FirebaseStorage storage = FirebaseStorage.getInstance();
+        //FirebaseStorage storage = FirebaseStorage.getInstance();
 
         //사진 들고오기
-        StorageReference storageRef = storage.getReference().child(title+".jpg");
+        /*StorageReference storageRef = storage.getReference().child(title+".jpg");
         final long ONE_MEGABYTE = 1024 * 1024;
         storageRef.getBytes(ONE_MEGABYTE).addOnSuccessListener(executor,new OnSuccessListener<byte[]>() {
             @Override
@@ -99,7 +100,7 @@ public class PostActivity extends AppCompatActivity {
             public void onFailure(@NonNull Exception exception) {
                 // Handle any errors
             }
-        });
+        });*/
 
 
         //글 제목과, 글 내용 들고오기
@@ -158,9 +159,20 @@ public class PostActivity extends AppCompatActivity {
             }
         });
 
+        ImageView imageButton = (ImageView) findViewById(R.id.post_seecomment);
+        imageButton.setOnClickListener(new View.OnClickListener() {
 
-
-
-
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(PostActivity.this, CommentActivity.class);
+                startActivity(intent);
+            }
+        }); //댓글 보기 창 화면 이동(수연)
     }
+
+
+
+
+
+
 }

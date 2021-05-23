@@ -35,6 +35,7 @@ public class LoginActivity extends AppCompatActivity {
         TextView registerbutton = findViewById(R.id.register_button);
         Button tmp_btn = (Button) findViewById(R.id.Btn_tmp);
         Button test_yong = (Button) findViewById(R.id.Btn_dongtest);
+        Button test_comment = (Button) findViewById(R.id.Btn_test_comment);
 
         email_login = (EditText) findViewById(R.id.Login_id);
         pwd_login = (EditText) findViewById(R.id.Login_password);
@@ -65,6 +66,14 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
  */
+        test_comment.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, CommentActivity.class);
+                startActivity(intent);
+            }
+        }); //댓글 불러오기 확인 차 임시 버튼 생성(수연)
+
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

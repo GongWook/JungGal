@@ -118,6 +118,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="동욱 실험용" />
+        <Button
+            android:id="@+id/Btn_test_comment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="게시글 확인 창" />
 
     </LinearLayout>
 

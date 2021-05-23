@@ -3,28 +3,34 @@ package com.example.junggar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchHolder> {
-    private String[] search_text1,search_text2;
-    SearchHolder searchHolder;
+import com.bumptech.glide.Glide;
 
-    public SearchAdapter(String[] search_text1,String[] search_text2){
-        this.search_text1=search_text1;
-        this.search_text2=search_text2;
+import java.util.ArrayList;
+
+public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchHolder> {
+    private ArrayList<itemModel> arrayList;
+
+    public SearchAdapter(ArrayList<itemModel> arrayList){
+        this.arrayList=arrayList;
     }
 
 
     public class SearchHolder extends RecyclerView.ViewHolder {
-
-        public TextView search_text1, search_text2;
+        public ImageView imageView;
+        public TextView search_text1, search_text2, search_text3;
         public SearchHolder(View view){
             super(view);
-            this.search_text1=view.findViewById(R.id.text1_ex);
-            this.search_text2=view.findViewById(R.id.text2_ex);
+            this.imageView=view.findViewById(R.id.iv_image_search);
+            this.search_text1=view.findViewById(R.id.tv_title);
+            this.search_text2=view.findViewById(R.id.tv_content);
+            this.search_text3=view.findViewById(R.id.tv_time);
+
         }
     }
 
@@ -32,23 +38,26 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchHold
     @NonNull
     @Override
     public SearchHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View holderView = LayoutInflater.from(parent.getContext()).inflate(R.layout.search_holder_example,parent,false);
-        searchHolder=new SearchHolder(holderView);
+        View holderView = LayoutInflater.from(parent.getContext()).inflate(R.layout.soo_yeon_activity_recyclertmp,parent,false);
+        SearchHolder searchHolder=new SearchHolder(holderView);
 
         return searchHolder;
     }
 
     @Override
     public void onBindViewHolder(@NonNull SearchHolder searchHolder, int i) {
-        searchHolder.search_text1.setText(this.search_text1[i]);
-        searchHolder.search_text2.setText(this.search_text2[i]);
-
+        itemModel currentItem = arrayList.get(i);
+        Glide.with(searchHolder.itemView)
+                .load(arrayList.get(i).getImageResource())
+                .into(searchHolder.imageView);
+        searchHolder.search_text1.setText(currentItem.getText1());
+        searchHolder.search_text2.setText(currentItem.getText2());
+        searchHolder.search_text3.setText(currentItem.getText3());
     }
 
     @Override
     public int getItemCount() {
-        return search_text1.length;
+        return arrayList.size();
     }
-
 
 }

@@ -15,6 +15,7 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.GeoPoint;
+import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.naver.maps.geometry.LatLng;
@@ -27,37 +28,38 @@ import java.util.concurrent.Executor;
 public class SearchActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
-    RecyclerView.Adapter adapter;
+    SearchAdapter adapter;
+    ArrayList<itemModel> itemList;
 
     private Map<String, Object> result;
-    String tmp;
-    ArrayList<String> StringArrayList = new ArrayList<>();
-
     FirebaseFirestore db = FirebaseFirestore.getInstance(); //파이어 베이스 변수 설정
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_search);
+        setContentView(R.layout.soo_yeon_activity_searchtmp);
 
-        recyclerView=findViewById(R.id.recyclerView);
+        recyclerView=findViewById(R.id.recyclerview);
         layoutManager=new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
         //Firebase에서 작성글 내용 들고오기
-        db.collection("posts")
+        itemList = new ArrayList<>();
+        db.collection("Search").orderBy("time", Query.Direction.DESCENDING)
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
+                            itemList.clear();
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 result = document.getData();
                                 Log.d("Testing", ""+result);
-                                tmp = (String) result.get("title");
-                                StringArrayList.add(tmp);
+                                itemList.add(new itemModel((String)result.get("image"),(String)result.get("title"),(String)result.get("content"),(String)result.get("time")));
+
                                // Log.d("Testing", ""+tmp);
                             }
+                            adapter.notifyDataSetChanged();
                         } else {
                            // Log.d(TAG, "Error getting documents: ", task.getException());
                         }
@@ -65,13 +67,7 @@ public class SearchActivity extends AppCompatActivity {
                 });
 
 
-
-
-        String[] search_text1={"종욱이네 떡볶이","동욱이네 멸치반찬"};
-        String[] search_text2={"6~8시 나눔","2~3시 나눔"};
-
-        adapter=new SearchAdapter(search_text1,search_text2);
-
+        adapter=new SearchAdapter(itemList);
         recyclerView.setAdapter(adapter);
 
     }

@@ -40,6 +40,7 @@
         <activity android:name=".PostWriteActivity"/>
         <activity android:name=".PositionActivity"/>
         <activity android:name=".PostActivity"/>
+        <activity android:name=".CommentActivity"/>
     </application>
 
 </manifest>

@@ -65,7 +65,7 @@
                 android:id="@+id/Main_photo"
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
-                android:src="@drawable/camera_icon"/>
+                android:src="@drawable/userid_icon"/> //카메라 아이콘이 없어서 오류떠서 임의로 아이콘 넣었습니다(수연)
 
         </LinearLayout>
 

@@ -42,6 +42,7 @@
         <activity android:name=".PostActivity"/>
         <activity android:name=".DirectionActivity"/>
         <activity android:name=".CommentWritveActivity"/>
+        <activity android:name=".CommentActivity"/>
     </application>
 
 </manifest>

@@ -195,8 +195,18 @@ public class PostActivity extends AppCompatActivity {
             }
         });
 
+        ImageView imageButton = (ImageView) findViewById(R.id.post_seecomment);
+        imageButton.setOnClickListener(new View.OnClickListener() {
 
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(PostActivity.this, CommentActivity.class);
+                startActivity(intent);
+            }
+        }); //댓글 보기 창 화면 이동(수연)
+    }
 
 
     }
+
 }

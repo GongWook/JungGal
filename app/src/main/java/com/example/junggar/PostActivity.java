@@ -3,11 +3,13 @@ package com.example.junggar;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.media.Image;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.util.Log;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -45,6 +47,9 @@ public class PostActivity extends AppCompatActivity {
     private TextView post_name;
     private TextView post_gender;
     private TextView post_selfinfo;
+    private ImageView Btn_finish;
+    private ImageView post_direction;
+    private ImageView post_comment;
 
     String title;
     String content;
@@ -66,6 +71,36 @@ public class PostActivity extends AppCompatActivity {
         post_name = (TextView) findViewById(R.id.post_username);
         post_gender = (TextView) findViewById(R.id.post_usergender);
         post_selfinfo = (TextView) findViewById(R.id.post_introduce);
+        Btn_finish = (ImageView) findViewById(R.id.Btn_finish);
+        post_direction = (ImageView) findViewById(R.id.post_route);
+        post_comment = (ImageView) findViewById(R.id.post_commentwrite);
+
+        //화면 종료
+        Btn_finish.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
+        //댓글 작성 화면
+        post_comment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PostActivity.this,CommentWritveActivity.class);
+                intent.putExtra("title",title);
+                startActivity(intent);
+            }
+        });
+
+        //길 찾기 화면
+        post_direction.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PostActivity.this, DirectionActivity.class);
+                startActivity(intent);
+            }
+        });
 
         //title 값 받아오기
         Intent intent = getIntent();
@@ -138,6 +173,7 @@ public class PostActivity extends AppCompatActivity {
 
                                 handler.post(()->{
                                     post_name.setText(name);
+                                    post_name.setTextSize(15);
                                     post_gender.setText(gender);
                                     post_selfinfo.setText(self_introduce);
                                 });
@@ -152,12 +188,12 @@ public class PostActivity extends AppCompatActivity {
                 }
 
                 handler.post(()->{
-                    post_title.setText(title);
+                    post_title.setText("<  " + title +"  >");
+                    post_title.setTextSize(17);
                     post_content.setText(content);
                 });
             }
         });
-
 
 
 

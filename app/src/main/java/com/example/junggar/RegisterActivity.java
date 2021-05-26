@@ -62,9 +62,9 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 if(checkedId == R.id.male){
-                    Gender = "Male";
+                    Gender = "(Male)";
                 }else{
-                    Gender = "Female";
+                    Gender = "(Female)";
                 }
             }
         });

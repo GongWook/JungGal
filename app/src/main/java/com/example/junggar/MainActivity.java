@@ -187,8 +187,6 @@ public class  MainActivity extends AppCompatActivity implements OnMapReadyCallba
 
                 InfoWindow infoWindow = new InfoWindow();
 
-                AtomicInteger sw = new AtomicInteger(1);
-
                 marker.setOnClickListener(overlay -> {
                     // 마커를 클릭할 때 정보창을 엶
                     if (marker.getInfoWindow() == null) {

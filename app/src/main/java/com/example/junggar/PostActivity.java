@@ -206,7 +206,4 @@ public class PostActivity extends AppCompatActivity {
         }); //댓글 보기 창 화면 이동(수연)
     }
 
-
-    }
-
 }

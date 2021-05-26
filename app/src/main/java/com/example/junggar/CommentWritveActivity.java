@@ -106,18 +106,17 @@ public class CommentWritveActivity extends AppCompatActivity {
                 comment.put("write_time",post_time);
                 comment.put("comment",content);
 
-                db.collection("comment").document(title).collection("userid").document(userid)
-                        .set(comment)
-                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                db.collection("comment").document(title).collection("content").add(comment)
+                        .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                             @Override
-                            public void onSuccess(Void aVoid) {
-                                //Log.d(TAG, "DocumentSnapshot successfully written!");
+                            public void onSuccess(DocumentReference documentReference) {
+                                //Log.d(TAG, "DocumentSnapshot written with ID: " + documentReference.getId());
                             }
                         })
                         .addOnFailureListener(new OnFailureListener() {
                             @Override
                             public void onFailure(@NonNull Exception e) {
-                                //Log.w(TAG, "Error writing document", e);
+                                //Log.w(TAG, "Error adding document", e);
                             }
                         });
 

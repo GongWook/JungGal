@@ -1,5 +1,6 @@
 package com.example.junggar;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,11 +23,12 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchHold
 
 
     public class SearchHolder extends RecyclerView.ViewHolder {
-        public ImageView imageView;
+        //public ImageView imageView;
         public TextView search_text1, search_text2, search_text3;
+
         public SearchHolder(View view){
             super(view);
-            this.imageView=view.findViewById(R.id.iv_image_search);
+            //this.imageView=view.findViewById(R.id.iv_image_search);
             this.search_text1=view.findViewById(R.id.tv_title);
             this.search_text2=view.findViewById(R.id.tv_content);
             this.search_text3=view.findViewById(R.id.tv_time);
@@ -47,12 +49,16 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchHold
     @Override
     public void onBindViewHolder(@NonNull SearchHolder searchHolder, int i) {
         itemModel currentItem = arrayList.get(i);
+        /*
         Glide.with(searchHolder.itemView)
                 .load(arrayList.get(i).getImageResource())
                 .into(searchHolder.imageView);
+
+         */
         searchHolder.search_text1.setText(currentItem.getText1());
         searchHolder.search_text2.setText(currentItem.getText2());
         searchHolder.search_text3.setText(currentItem.getText3());
+
     }
 
     @Override

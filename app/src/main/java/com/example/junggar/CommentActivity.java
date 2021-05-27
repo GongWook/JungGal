@@ -1,5 +1,6 @@
 package com.example.junggar;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -19,6 +20,8 @@ import java.util.ArrayList;
 import java.util.Map;
 
 public class CommentActivity extends AppCompatActivity {
+    String title; //글 제목
+
     RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
     CommentAdapter adapter;
@@ -36,9 +39,13 @@ public class CommentActivity extends AppCompatActivity {
         layoutManager=new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
+        Intent intent = getIntent();
+        title = intent.getStringExtra("comment");
+        Log.d("Testing", title);
+
         //Firebase에서 작성글 내용 들고오기
         itemList = new ArrayList<>();
-        db.collection("comment")
+        db.collection("comment").document(title).collection("content")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override

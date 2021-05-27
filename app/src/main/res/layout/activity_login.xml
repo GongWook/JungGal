@@ -9,7 +9,7 @@
         android:layout_width="219dp"
         android:layout_height="91dp"
         android:layout_gravity="center"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="130dp"
         android:src="@drawable/junggar_logo" />
 
     <LinearLayout
@@ -108,21 +108,16 @@
             android:textColor="#FFFFFF" />
 
         <Button
-            android:id="@+id/Btn_tmp"
+            android:id="@+id/Testing"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="임시 버튼 recyclerview" />
-
-        <Button
-            android:id="@+id/Btn_dongtest"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="동욱 실험용" />
-        <Button
-            android:id="@+id/Btn_test_comment"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="게시글 확인 창" />
+            android:layout_marginTop="20dp"
+            android:layout_weight="0"
+            android:backgroundTint="#FFC000"
+            android:gravity="center"
+            android:text="testing"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF" />
 
     </LinearLayout>
 

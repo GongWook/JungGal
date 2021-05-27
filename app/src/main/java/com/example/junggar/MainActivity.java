@@ -10,6 +10,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -54,6 +55,7 @@ public class  MainActivity extends AppCompatActivity implements OnMapReadyCallba
         ImageView writeBtn = (ImageView) findViewById(R.id.Btn_write);
         ImageView refreshBtn = (ImageView) findViewById(R.id.Btn_refresh);
         ImageView searchBtn = (ImageView) findViewById(R.id.Btn_search);
+
 
         //검색 창으로 넘어가기
         searchBtn.setOnClickListener(new View.OnClickListener() {

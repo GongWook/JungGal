@@ -201,6 +201,7 @@ public class PostActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(PostActivity.this, CommentActivity.class);
+                intent.putExtra("comment",title);
                 startActivity(intent);
             }
         }); //댓글 보기 창 화면 이동(수연)

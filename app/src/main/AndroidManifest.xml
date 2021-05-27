@@ -3,6 +3,7 @@
     package="com.example.junggar">
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -43,6 +44,7 @@
         <activity android:name=".DirectionActivity"/>
         <activity android:name=".CommentWritveActivity"/>
         <activity android:name=".CommentActivity"/>
+        <activity android:name=".Testing"/>
     </application>
 
 </manifest>

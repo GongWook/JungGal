@@ -35,6 +35,8 @@ import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -52,12 +54,18 @@ public class PostWriteActivity extends AppCompatActivity {
     GeoPoint position;
     int markertype;
     String userid;
+    String post_time;
 
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_postwrite);
+
+        //작성 시간 저장하기
+        SimpleDateFormat timeformat = new SimpleDateFormat("hh:mm a");
+        Date time = new Date();
+        post_time = timeformat.format(time);
 
         //갤러리에서 사진 받아오기
         get_photo = (ImageView) findViewById(R.id.Main_photo);
@@ -94,6 +102,7 @@ public class PostWriteActivity extends AppCompatActivity {
                 post.put("id",userid);
                 post.put("content",content);
                 post.put("markertype",markertype);
+                post.put("time",post_time);
                 //post.put();
 
 

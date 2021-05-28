@@ -55,6 +55,8 @@ public class CommentActivity extends AppCompatActivity {
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 result = document.getData();
                                 Log.d("Testing", ""+result);
+
+
                                 itemList.add(new CommentModel(R.drawable.userid_icon,(String)result.get("name"),(String)result.get("comment")));
 
                                 // Log.d("Testing", ""+tmp);

@@ -25,8 +25,10 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.GeoPoint;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+import com.naver.maps.geometry.LatLng;
 import com.naver.maps.map.overlay.Marker;
 
 import org.w3c.dom.Text;
@@ -57,6 +59,10 @@ public class PostActivity extends AppCompatActivity {
     String gender;
     String name;
     String self_introduce;
+
+    GeoPoint position;
+    double longitude;
+    double latitude;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -98,6 +104,8 @@ public class PostActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(PostActivity.this, DirectionActivity.class);
+                intent.putExtra("latitude", latitude);
+                intent.putExtra("longitude", longitude);
                 startActivity(intent);
             }
         });
@@ -149,6 +157,9 @@ public class PostActivity extends AppCompatActivity {
                         result = document.getData();
                         content = (String) result.get("content");
                         userid = (String) result.get("id");
+                        position = (GeoPoint) result.get("position");
+                        latitude = position.getLatitude();
+                        longitude = position.getLongitude();
 
                         //작성자 이름, 성별, 간략한 자기소개
                         DocumentReference docRef2 = db.collection("users").document(userid);

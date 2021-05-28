@@ -2,6 +2,7 @@ package com.example.junggar;
 
 public class itemModel {
     //private String imageResource;
+    private int image_marker;
     private String text1;
     private String text2;
     private String text3;
@@ -16,8 +17,9 @@ public class itemModel {
 
      */
 
-    public itemModel( String text1, String text2, String text3) {
+    public itemModel( int image_marker,String text1, String text2, String text3) {
         //this.imageResource = imageResource;
+        this.image_marker=image_marker;
         this.text1 = text1;
         this.text2 = text2;
         this.text3 = text3;
@@ -36,6 +38,15 @@ public class itemModel {
 
 
      */
+
+    public int getImage_marker(){
+        return image_marker;
+    }
+
+    public void setImage_marker(int image_marker){
+        this.image_marker=image_marker;
+    }
+
     public String getText1() {
 
         return text1;

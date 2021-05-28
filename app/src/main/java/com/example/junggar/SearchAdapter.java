@@ -24,11 +24,13 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchHold
 
     public class SearchHolder extends RecyclerView.ViewHolder {
         //public ImageView imageView;
+        public ImageView search_image;
         public TextView search_text1, search_text2, search_text3;
 
         public SearchHolder(View view){
             super(view);
             //this.imageView=view.findViewById(R.id.iv_image_search);
+            this.search_image=view.findViewById(R.id.image_marker);
             this.search_text1=view.findViewById(R.id.tv_title);
             this.search_text2=view.findViewById(R.id.tv_content);
             this.search_text3=view.findViewById(R.id.tv_time);
@@ -55,6 +57,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchHold
                 .into(searchHolder.imageView);
 
          */
+        searchHolder.search_image.setImageResource(currentItem.getImage_marker());
         searchHolder.search_text1.setText(currentItem.getText1());
         searchHolder.search_text2.setText(currentItem.getText2());
         searchHolder.search_text3.setText(currentItem.getText3());

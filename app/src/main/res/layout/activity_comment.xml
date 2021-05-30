@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".CommentActivity"
-    android:fontFamily="@font/namugodikl">
+    android:fontFamily="@font/namugodikl"
+    android:background="@color/white">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -31,12 +32,6 @@
             android:layout_marginLeft="30dp"
             android:text="종욱이네 떡볶이 댓글"
             android:textSize="25dp" />
-
-        <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_margin="12dp"
-            android:src="@drawable/back_icon"/>
 
     </LinearLayout>
 

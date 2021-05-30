@@ -1,17 +1,29 @@
 package com.example.junggar;
 
+import android.Manifest;
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.FragmentManager;
 
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.GeoPoint;
 import com.naver.maps.geometry.LatLng;
 import com.naver.maps.map.LocationTrackingMode;
@@ -43,12 +55,38 @@ public class DirectionActivity extends AppCompatActivity implements OnMapReadyCa
     double latitude;
     double longitude;
 
+    double present_latitude;
+    double present_longitude;
+
     ArrayList<LatLng> latLngArrayList = new ArrayList<>();
+
+    private FusedLocationProviderClient fusedLocationClient;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_direction);
+
+        fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return;
+        }
+        fusedLocationClient.getLastLocation().addOnSuccessListener(this, new OnSuccessListener<Location>() {
+            @Override
+            public void onSuccess(Location location) {
+                present_latitude=location.getLatitude();
+                present_longitude=location.getLongitude();
+                Log.d("Testing present latitude", " " +present_latitude);
+            }
+        });
 
         Intent intent = getIntent();
         latitude = intent.getDoubleExtra("latitude",0.0);
@@ -107,7 +145,7 @@ public class DirectionActivity extends AppCompatActivity implements OnMapReadyCa
 
             NaverAPI naverapi = retrofit.create(NaverAPI.class);
 
-            Call<ResultPath> call = naverapi.getPath(APIKEY_ID,APIKEY,"128.0984, 35.1545",longitude+", " +latitude,"trafast");
+            Call<ResultPath> call = naverapi.getPath(APIKEY_ID,APIKEY,present_longitude+", "+present_latitude,longitude+", " +latitude,"trafast");
 
             call.enqueue(new Callback<ResultPath>() {
                 @Override
@@ -154,4 +192,5 @@ public class DirectionActivity extends AppCompatActivity implements OnMapReadyCa
             });
 
     }
+
 }

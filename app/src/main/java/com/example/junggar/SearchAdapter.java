@@ -34,7 +34,6 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchHold
             this.search_text1=view.findViewById(R.id.tv_title);
             this.search_text2=view.findViewById(R.id.tv_content);
             this.search_text3=view.findViewById(R.id.tv_time);
-
         }
     }
 
@@ -68,5 +67,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchHold
     public int getItemCount() {
         return arrayList.size();
     }
+
+
 
 }

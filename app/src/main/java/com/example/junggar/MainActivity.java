@@ -55,9 +55,17 @@ public class  MainActivity extends AppCompatActivity implements OnMapReadyCallba
         ImageView writeBtn = (ImageView) findViewById(R.id.Btn_write);
         ImageView refreshBtn = (ImageView) findViewById(R.id.Btn_refresh);
         ImageView searchBtn = (ImageView) findViewById(R.id.Btn_search);
+        ImageView logoutBtn = (ImageView) findViewById(R.id.btn_logout);
 
+        //로그아웃
+        logoutBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
-        //검색 창으로 넘어가기
+       //검색 창으로 넘어가기
         searchBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/white">
 
     <ImageView
         android:layout_width="219dp"
@@ -104,18 +105,6 @@
             android:backgroundTint="#FFC000"
             android:gravity="center"
             android:text="로그인"
-            android:textAllCaps="false"
-            android:textColor="#FFFFFF" />
-
-        <Button
-            android:id="@+id/Testing"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_weight="0"
-            android:backgroundTint="#FFC000"
-            android:gravity="center"
-            android:text="testing"
             android:textAllCaps="false"
             android:textColor="#FFFFFF" />
 

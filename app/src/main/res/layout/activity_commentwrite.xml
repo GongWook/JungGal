@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/white">
 
     <LinearLayout
         android:layout_width="410dp"
@@ -17,13 +18,14 @@
             android:id="@+id/Btn_back"
             android:layout_width="26dp"
             android:layout_height="26dp"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="40dp"
             android:src="@drawable/back_icon" />
 
         <TextView
+            android:id="@+id/comment_title"
             android:layout_width="260dp"
             android:layout_height="32dp"
-            android:layout_marginLeft="25dp"
+            android:layout_marginLeft="45dp"
             android:layout_marginRight="75dp"
             android:fontFamily="@font/namugodikl"
             android:text="종욱이네 나눔이 댓글 작성"

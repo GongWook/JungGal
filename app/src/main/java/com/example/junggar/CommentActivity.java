@@ -3,6 +3,7 @@ package com.example.junggar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -27,6 +28,8 @@ public class CommentActivity extends AppCompatActivity {
     CommentAdapter adapter;
     ArrayList<CommentModel> itemList;
 
+    TextView main_title;
+
     private Map<String, Object> result;
     FirebaseFirestore db = FirebaseFirestore.getInstance(); //파이어 베이스 변수 설정
 
@@ -35,12 +38,15 @@ public class CommentActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_comment);
 
+        main_title = (TextView) findViewById(R.id.main_title);
+
         recyclerView=findViewById(R.id.recyclerview2);
         layoutManager=new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
         Intent intent = getIntent();
         title = intent.getStringExtra("comment");
+        main_title.setText(title);
         Log.d("Testing", title);
 
         //Firebase에서 작성글 내용 들고오기

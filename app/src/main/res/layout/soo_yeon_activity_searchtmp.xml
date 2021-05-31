@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:fontFamily="@font/namugodikl">
+    android:fontFamily="@font/namugodikl"
+    android:background="@color/white">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -26,16 +27,16 @@
 
         <TextView
             android:id="@+id/textView3"
-            android:layout_width="56dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginLeft="130dp"
-            android:text="검색"
+            android:layout_marginLeft="80dp"
+            android:text="게시물 리스트"
             android:textSize="25dp" />
 
     </LinearLayout>
 
-
+<!--
     <SearchView
         android:id="@+id/search_view"
         android:layout_width="match_parent"
@@ -50,6 +51,7 @@
         app:layout_constraintTop_toTopOf="parent" >
 
     </SearchView>
+    -->
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview"

@@ -39,16 +39,6 @@ public class LoginActivity extends AppCompatActivity {
         login = (Button) findViewById(R.id.Btn_login);
         firebaseAuth = firebaseAuth.getInstance(); //firebaseAuth의 인스턴스르 가져온다.
 
-        Button testingbtn = (Button) findViewById(R.id.Testing);
-
-        testingbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(LoginActivity.this, Testing.class);
-                startActivity(intent);
-            }
-        });
-
         registerbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -23,7 +23,8 @@ public interface NaverAPI {
             @Header("X-NCP-APIGW-API-KEY-ID") String apiKeyID,
             @Header("X-NCP-APIGW-API-KEY") String apiKey,
             @Query("start") String start,
-            @Query("goal") String goal
+            @Query("goal") String goal,
+            @Query("option") String option
     );
 
 

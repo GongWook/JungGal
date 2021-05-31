@@ -157,8 +157,8 @@ public class PostWriteActivity extends AppCompatActivity {
         btn_allergy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(PostWriteActivity.this, AllergyActivity.class);
-                startActivity(intent);
+                //Intent intent = new Intent(PostWriteActivity.this, AllergyActivity.class);
+                //startActivity(intent);
             }
         });
 

@@ -30,6 +30,7 @@ public class CommentWritveActivity extends AppCompatActivity {
     private ImageView back_icon;
     private TextView comment_icon;
     private EditText comment_content;
+    private TextView comment_title;
     String userid;
     String username;
     String title;
@@ -51,6 +52,7 @@ public class CommentWritveActivity extends AppCompatActivity {
         back_icon = (ImageView) findViewById(R.id.Btn_back);
         comment_icon = (TextView) findViewById(R.id.comment_submit);
         comment_content = (EditText) findViewById(R.id.comment_content);
+        comment_title = (TextView) findViewById(R.id.comment_title);
 
         //시간 설정
         post_time = timeformat.format(time);
@@ -62,6 +64,7 @@ public class CommentWritveActivity extends AppCompatActivity {
         //title 값 가져오기
         Intent intent = getIntent();
         title = intent.getStringExtra("title");
+        comment_title.setText(title);
 
         //user name 가져오기
         DocumentReference docRef = db.collection("users").document(userid);

@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -52,6 +53,7 @@ public class PostActivity extends AppCompatActivity {
     private ImageView Btn_finish;
     private ImageView post_direction;
     private ImageView post_comment;
+    private ImageView Btn_cancle;
 
     String title;
     String content;
@@ -63,6 +65,10 @@ public class PostActivity extends AppCompatActivity {
     GeoPoint position;
     double longitude;
     double latitude;
+
+    String check_userid;
+
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -80,6 +86,38 @@ public class PostActivity extends AppCompatActivity {
         Btn_finish = (ImageView) findViewById(R.id.Btn_finish);
         post_direction = (ImageView) findViewById(R.id.post_route);
         post_comment = (ImageView) findViewById(R.id.post_commentwrite);
+        Btn_cancle = (ImageView) findViewById(R.id.btn_cancle);
+
+        check_userid = UserInfoApplication.getInstance().getGlobalUserId();
+        
+        
+        //게시글 삭제
+        Btn_cancle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(check_userid.equals(userid)){
+                    db.collection("posts").document(title)
+                            .delete()
+                            .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void aVoid) {
+                                    //Log.d(TAG, "DocumentSnapshot successfully deleted!");
+                                    Toast.makeText(PostActivity.this, "반찬 나눔이 종료되었습니다 !", Toast.LENGTH_SHORT).show();
+                                }
+                            })
+                            .addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    //Log.w(TAG, "Error deleting document", e);
+                                }
+                            });
+
+                    finish();
+                }else{
+                    Toast.makeText(PostActivity.this, "게시글 작성자가 아닙니다 !", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
 
         //화면 종료
         Btn_finish.setOnClickListener(new View.OnClickListener() {
@@ -121,7 +159,7 @@ public class PostActivity extends AppCompatActivity {
         };
 
         Handler handler = new Handler(Looper.getMainLooper());
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
+
         FirebaseStorage storage = FirebaseStorage.getInstance();
 
         //사진 들고오기

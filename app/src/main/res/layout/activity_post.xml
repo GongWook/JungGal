@@ -4,24 +4,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    tools:context=".PostActivity"
-    android:background="@color/white">
+    tools:context=".PostActivity">
 
     <LinearLayout
-        android:layout_width="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:layout_width="374dp"
         android:layout_height="15dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginLeft="15dp"
         android:layout_gravity="start"
-        android:orientation="vertical">
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp">
 
         <ImageView
             android:id="@+id/Btn_finish"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
             android:src="@drawable/back_icon" />
+
+        <ImageView
+            android:id="@+id/btn_cancle"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginLeft="340dp"
+            android:src="@drawable/cnacle_icon" />
+
 
     </LinearLayout>
 
@@ -41,15 +52,15 @@
             android:layout_width="match_parent"
             android:layout_height="63dp"
             android:layout_marginTop="24dp"
-            android:paddingLeft="15dp"
             android:gravity="center_horizontal"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:paddingLeft="15dp">
 
             <ImageView
                 android:id="@+id/post_profile"
                 android:layout_width="30dp"
                 android:layout_height="match_parent"
-                android:src="@drawable/userid_icon"/>
+                android:src="@drawable/userid_icon" />
 
             <LinearLayout
                 android:layout_width="258dp"

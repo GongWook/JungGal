@@ -148,7 +148,7 @@
             android:layout_width="match_parent"
             android:layout_height="83dp"
             android:drawableLeft="@drawable/snackfood_custom"
-            android:drawablePadding="4dp"
+            android:drawablePadding="50dip"
             android:fontFamily="@font/namugodikl"
             android:paddingLeft="50dip"
             android:text="분식"

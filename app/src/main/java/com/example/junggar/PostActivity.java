@@ -102,6 +102,7 @@ public class PostActivity extends AppCompatActivity {
                                 @Override
                                 public void onSuccess(Void aVoid) {
                                     //Log.d(TAG, "DocumentSnapshot successfully deleted!");
+                                    db.collection("comment").document(title).collection(content).document().delete();
                                     Toast.makeText(PostActivity.this, "반찬 나눔이 종료되었습니다 !", Toast.LENGTH_SHORT).show();
                                 }
                             })
